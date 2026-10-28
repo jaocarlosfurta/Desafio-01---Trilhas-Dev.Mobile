@@ -33,8 +33,6 @@ opção para simular uma compra.
 
 ## Como executar
 
-Não é necessário instalar dependências. Para executar o projeto:
-
 1. Baixe ou clone este repositório.
 2. Abra o arquivo `index.html` em um navegador.
 3. Clique em **Simular compra**.
