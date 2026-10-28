@@ -46,9 +46,6 @@ mensagem de orientação.
 
 ## Captura de tela
 
-Adicione uma captura da página em `assets/captura.png` e mantenha a imagem
-referenciada abaixo:
-
 ![Captura de tela da Banana Game Store](assets/captura.png)
 
 ## Funcionamento da lógica JavaScript
