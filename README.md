@@ -1,84 +1,96 @@
-# Banana Game Store — Simulador de Compras
+# Banana Game Store
 
 ## Identificação
 
-- **Aluno:** João Carlos Furtado
+- **Aluno:** João Carlos Furtado da Silva
 - **Trilha:** Desenvolvimento Mobile — Trilhas Inova
-- **Desafio:** Minha Loja: Simulador de Compras
+- **Projeto:** Minha Loja — Simulador de Compras
 
-## Sobre a loja
+## Apresentação da loja
 
-A Banana Game Store é uma loja fictícia de jogos e consoles clássicos. O catálogo apresenta seis itens com fotos, descrições e preços.
+A Banana Game Store é uma loja fictícia de consoles e jogos clássicos. A
+página apresenta os produtos em cards com imagens, descrições, preços e uma
+opção para simular uma compra.
 
-## Catálogo
+### Produtos e preços
 
-| Produto | Descrição | Preço |
-| --- | --- | ---: |
-| Super Nintendo | Console com caixa, fios e entradas originais; bloqueado | R$ 320,00 à vista |
-| Nintendo Gamecube | Console com fonte e controle paralelos; desbloqueado | R$ 450,00 à vista |
-| Sony PlayStation | Sem caixa; controles e cabos originais; Memory Card de brinde; desbloqueado | R$ 250,00 |
-| Pepsiman | Jogo de ação e corrida | R$ 60,00 |
-| Resident Evil 4 (Gamecube) | Jogo de ação e terror | R$ 50,00 |
-| Super Mario RPG | Jogo de RPG com Mario e seus amigos | R$ 60,00 |
+| Produto | Preço |
+| --- | ---: |
+| Super Nintendo | R$ 320,00 |
+| Nintendo Gamecube | R$ 450,00 |
+| Sony PlayStation | R$ 250,00 |
+| Pepsiman | R$ 60,00 |
+| Resident Evil 4 (Gamecube) | R$ 50,00 |
+| Super Mario RPG | R$ 60,00 |
 
-## Requisitos do desafio
+## Tecnologias
 
-### Página da loja
+- **HTML5:** estrutura da página, catálogo e informações da loja.
+- **CSS3:** layout responsivo, cards dos produtos, tema arcade e efeitos
+  visuais.
+- **JavaScript:** validação das respostas, cálculo dos subtotais, resumo e
+  total da compra.
 
-- [x] Nome e breve descrição da loja.
-- [x] Pelo menos três produtos, com nome, descrição curta e preço.
-- [x] Instruções de uso e botão “Simular compra”.
-- [x] Rodapé com o nome do aluno.
-- [x] Estilização com CSS e imagens do catálogo armazenadas na pasta `assets`.
+## Como executar
 
-### Simulação de compra
+Não é necessário instalar dependências. Para executar o projeto:
 
-- [x] O botão chama uma função JavaScript com `onclick`.
-- [x] `prompt()` pergunta a quantidade de cada produto.
-- [x] `Number()` converte as respostas em números.
-- [x] O programa calcula preço × quantidade para cada item.
-- [x] `alert()` mostra quantidades, valores dos itens e total.
-- [x] A quantidade `0` pode ser usada para não comprar um produto.
-- [x] Se todas as quantidades forem `0`, informa que nenhum produto foi selecionado.
-- [x] Resposta vazia, cancelada ou não numérica encerra a simulação e orienta a reiniciar pelo botão.
-- [x] Os preços usados no JavaScript correspondem aos preços do catálogo.
-- [ ] Aplicar desconto: o enunciado menciona verificar o direito ao desconto, mas não especifica a regra, o valor mínimo ou o percentual. A regra precisa ser definida antes de implementar esse item.
+1. Baixe ou clone este repositório.
+2. Abra o arquivo `index.html` em um navegador.
+3. Clique em **Simular compra**.
+4. Informe a quantidade desejada para cada produto.
+5. Use `0` para não incluir um produto na compra.
 
-### Arquivos e documentação
-
-- [x] Projeto organizado em `index.html`, `style.css` e `script.js`.
-- [x] Pasta `assets` contém as imagens usadas no catálogo.
-- [x] README apresenta nome do projeto, aluno, trilha, loja, produtos, preços, tecnologias e instruções de execução.
-- [ ] Adicionar uma captura de tela da página em `assets/captura.png`.
-- [ ] Registrar os testes realizados.
-- [ ] Preencher a dificuldade encontrada e o que foi aprendido.
-
-## Tecnologias e execução
-
-- **HTML5:** estrutura da página e catálogo.
-- **CSS3:** cores, layout dos cartões, fotos e adaptação para telas menores.
-- **JavaScript:** perguntas com `prompt()`, conversão com `Number()`, cálculos, validação simples e resultado com `alert()`.
-
-Para executar, abra `index.html` em um navegador. Não é necessário instalar dependências.
+Respostas vazias, canceladas ou não numéricas encerram a simulação e exibem uma
+mensagem de orientação.
 
 ## Captura de tela
 
-Depois de capturar a página no navegador, salve a imagem como `assets/captura.png` e descomente a linha abaixo:
+Adicione uma captura da página em `assets/captura.png` e mantenha a imagem
+referenciada abaixo:
 
-<!-- ![Captura da Banana Game Store](assets/captura.png) -->
+![Captura de tela da Banana Game Store](assets/captura.png)
+
+## Funcionamento da lógica JavaScript
+
+1. Os produtos são armazenados em uma lista com nome e preço.
+2. Um laço percorre essa lista e usa `prompt()` para solicitar a quantidade de
+   cada item.
+3. A função `verificarResposta()` valida a entrada e converte o valor com
+   `Number()`.
+4. Quantidades iguais a `0` são convertidas para `null`, representando produtos
+   não selecionados.
+5. `filter()` remove os produtos que não foram selecionados.
+6. `reduce()` calcula o total multiplicando preço e quantidade.
+7. `map()` monta as linhas do resumo, que são exibidas com `alert()`.
+8. Se nenhum produto for selecionado, a página informa essa situação em vez de
+   mostrar um resumo vazio.
 
 ## Testes realizados
 
-Marque os itens após executá-los:
+- [x] A página abre e carrega o HTML, o CSS e as imagens do catálogo.
+- [x] O botão **Simular compra** inicia a sequência de perguntas.
+- [x] Quantidades positivas são calculadas corretamente.
+- [x] Uma quantidade `0` remove o produto do resumo.
+- [x] Quantidades `0` para todos os produtos exibem a mensagem de nenhum item
+      selecionado.
+- [x] Respostas vazias, canceladas ou não numéricas encerram a simulação.
 
-- [ ] Abrir a página no navegador e confirmar que o CSS e as imagens carregam.
-- [ ] Fazer uma simulação com quantidades positivas e conferir cada subtotal e o total.
-- [ ] Digitar `0` para um produto e confirmar que a compra continua.
-- [ ] Digitar `0` para todos os produtos e confirmar a mensagem de nenhum produto selecionado.
-- [ ] Enviar uma resposta vazia, cancelar ou digitar texto e confirmar que a simulação para e pode ser reiniciada pelo botão.
-- [ ] Conferir a página em uma tela estreita de celular.
+## Dificuldade encontrada e aprendizado
 
-## Dificuldade e aprendizado
+- **Dificuldade encontrada:** Preparação do front-end e escolha de design.
+- **O que aprendi:** Aprendi a organizar produtos em uma lista e a usar
+  funções JavaScript para validar entradas, filtrar itens, calcular valores e
+  montar um resumo. Também pratiquei ideias de design com CSS.
 
-- **Dificuldade encontrada:** [Preencha com uma dificuldade que você teve ao desenvolver o projeto.]
-- **O que aprendi:** [Conte o que aprendeu sobre HTML, CSS ou lógica com JavaScript.]
+## Uso de inteligência artificial
+
+A inteligência artificial foi utilizada como ferramenta de apoio para:
+
+- Esclarecer dúvidas sobre lógica de programação e otimizações.
+
+- Ajudar a definir a ideia do front-end, esclarecendo dúvidas sobre como
+  preparar e adaptar um design no código.
+
+- Corrigir a ortografia da documentação e a indentação dos códigos, para que
+  ficassem mais legíveis.
